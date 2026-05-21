@@ -1,0 +1,25 @@
+# Reload sxhkd config
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# Window switcher
+alt + Tab
+    rofi -show window
+
+# Volume controls
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+    amixer {set Master 5%+,set Master 5%-,set Master toggle}
+
+XF86AudioMicMute
+    amixer set Capture toggle
+
+# Brightness controls (if you have brightnessctl)
+XF86MonBrightness{Up,Down}
+    brightnessctl set {+10%,10%-}
+
+# Thunar
+super + t
+	thunar
+
+Print
+    flameshot gui
