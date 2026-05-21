@@ -53,3 +53,5 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 ```
  
 The script kills any existing instance before relaunching, and supports multi-monitor setups via `xrandr`.
+
+![i3wm](./i3wm.png)
