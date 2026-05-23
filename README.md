@@ -1,7 +1,31 @@
 # dotfiles - i3wm setup
 
-A minimal, keyboard-driven desktop environment on Ubuntu 24, built around i3wm with a Dracula color scheme.
+A minimal, keyboard-driven desktop environment, built around `i3wm` with a Dracula color scheme.
  
+ ![i3wm](./i3wm.png)
+ 
+## Installation
+ 
+**Clone the repository**:
+```bash
+git clone git@gtihub.com:a-mhamdi/i3wm
+cd i3wm
+```
+
+**Dependencies**
+```bash
+sudo apt install i3 picom polybar rofi sxhkd \
+  fonts-firacode fonts-noto-color-emoji
+```
+ 
+For Nerd Font icons in `polybar`, install FiraCode Nerd Font manually:
+ 
+```bash
+mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+unzip FiraCode.zip && fc-cache -fv
+```
+
 ## Components
  
 | Tool | Role |
@@ -29,24 +53,9 @@ A minimal, keyboard-driven desktop environment on Ubuntu 24, built around i3wm w
     └── sxhkdrc
 ```
  
-## Dependencies
- 
-```bash
-sudo apt install i3 picom polybar rofi sxhkd \
-  fonts-firacode fonts-noto-color-emoji
-```
- 
-For Nerd Font icons in polybar, install FiraCode Nerd Font manually:
- 
-```bash
-mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
-unzip FiraCode.zip && fc-cache -fv
-```
- 
 ## Polybar
  
-Polybar is launched via `launch.sh`, called from i3 config:
+`Polybar` is launched via `launch.sh`, called from `i3` config:
  
 ```
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -54,4 +63,3 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
  
 The script kills any existing instance before relaunching, and supports multi-monitor setups via `xrandr`.
 
-![i3wm](./i3wm.png)
