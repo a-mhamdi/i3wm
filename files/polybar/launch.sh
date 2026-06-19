@@ -13,6 +13,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar
 echo "---" | tee -a /tmp/polybar1.log
-polybar --config=~/.config/polybar/config.ini main 2>&1 | tee -a /tmp/polybar1.log & disown
+
+polybar main 2>&1 | tee -a /tmp/polybar1.log & disown
 
 echo "Polybar launched..."

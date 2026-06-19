@@ -18,8 +18,8 @@ XF86MonBrightness{Up,Down}
     brightnessctl set {+10%,10%-}
 
 # Thunar
-super + t
-	thunar
+ctrl + alt + h
+    thunar
 
 Print
     flameshot gui
